@@ -11,26 +11,13 @@ function Home() {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
   useEffect(() => {
-    const verifyCookie = async () => {
+    
       if (!cookies.token) {
         navigate("/login");
       }
-      const { data } = await axios.post(
-        "https://gymfreaksbackend.onrender.com",
-        {},
-        { withCredentials: true }
-      );
-      const { status, user } = data;
-      if (user) {
-        return
-      }
-      return status
-        ?
-        navigate("/")
-        : (removeCookie("token"), navigate("/login"));
-    };
-    verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+      
+    
+  }, []);
 
   return (
     <div className=' bg-gradient-to-r from-blue-900 to-indigo-900'>
