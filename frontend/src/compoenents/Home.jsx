@@ -5,16 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { motion } from "framer-motion"
-import { useDispatch } from "react-redux";
-import { logout, login } from './store/authSlice'
-
 
 function Home() {
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
-  
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
@@ -26,11 +21,13 @@ function Home() {
         { withCredentials: true }
       );
       const { status, user } = data;
+      if (user) {
+        return
+      }
       return status
         ?
-        dispatch(login({ data }))
-        : (removeCookie("token"), navigate("/login", dispatch(logout()))
-        );
+        navigate("/")
+        : (removeCookie("token"), navigate("/login"));
     };
     verifyCookie();
     navigate("/");
