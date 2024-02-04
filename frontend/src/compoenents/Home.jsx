@@ -11,9 +11,10 @@ import { logout, login } from './store/authSlice'
 
 function Home() {
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
+  
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
@@ -25,15 +26,14 @@ function Home() {
         { withCredentials: true }
       );
       const { status, user } = data;
-      if (user) {
-        dispatch(login({ data }))
-      }
       return status
         ?
-        navigate("/")
-        : (removeCookie("token"), navigate("/login"), dispatch(logout()));
+        dispatch(login({ data }))
+        : (removeCookie("token"), navigate("/login", dispatch(logout()))
+        );
     };
     verifyCookie();
+    navigate("/");
   }, [cookies, navigate, removeCookie]);
 
   return (
