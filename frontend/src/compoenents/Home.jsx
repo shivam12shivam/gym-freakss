@@ -6,6 +6,8 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { motion } from "framer-motion"
 import { useDispatch } from "react-redux";
+import { logout, login } from './store/authSlice'
+
 
 function Home() {
 
