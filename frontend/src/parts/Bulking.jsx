@@ -5,7 +5,7 @@ function Bulking() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/getDatabulk")
+    axios.get("https://gymfreaksbackend.onrender.com/getDatabulk")
       .then(Response => {
         setData(Response.data);
         console.log(Response.data);

@@ -24,10 +24,13 @@ function Home() {
       if (user) {
         return
       }
-      
+      return status
+        ?
+        navigate("/")
+        : (removeCookie("token"), navigate("/login"));
     };
     verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+  }, [cookies, removeCookie]);
 
   return (
     <div className=' bg-gradient-to-r from-blue-900 to-indigo-900'>

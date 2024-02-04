@@ -6,7 +6,7 @@ function Cutting() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/getData")
+    axios.get("https://gymfreaksbackend.onrender.com/getData")
       .then(Response => {
         setData(Response.data);
         console.log(Response.data);
