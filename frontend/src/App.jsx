@@ -12,11 +12,12 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
-  
+
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
         navigate("/login");
+        return;
       }
       const { data } = await axios.post(
         "https://gymfreaksbackend.onrender.com",
@@ -24,11 +25,15 @@ function App() {
         { withCredentials: true }
       );
       const { status, user } = data;
-      return status
-        ?
-        dispatch(login({ data }))
-        : (removeCookie("token"), navigate("/login", dispatch(logout()))
-        );
+      if (!status) {
+        // Assuming dispatch(logout()) handles logout action properly
+        dispatch(logout());
+        removeCookie("token");
+        navigate("/login");
+      } else {
+        // Assuming dispatch(login({ data })) handles login action properly
+        dispatch(login({ data }));
+      }
     };
     verifyCookie();
     // navigate("/");
@@ -68,7 +73,7 @@ function App() {
       </div>
     </div>
 
-    
+
   )
 
 }

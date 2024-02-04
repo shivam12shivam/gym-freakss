@@ -7,33 +7,13 @@ import axios from "axios";
 import { motion } from "framer-motion"
 
 function Home() {
-
+  const authStatus = useSelector(state => state.auth.status)
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
   useEffect(() => {
     const verifyCookie = async () => {
-      if (!cookies.token) {
+      if(authStatus===false){
         navigate("/login");
-        return;
-      }
-      try {
-        const { data } = await axios.post(
-          "https://gymfreaksbackend.onrender.com",
-          {},
-          { withCredentials: true }
-        );
-        const { status, user } = data;
-        if (user) {
-          return
-        }
-        if (status) {
-          navigate("/");
-        } else {
-          removeCookie("token");
-          navigate("/login");
-        }
-      } catch (error) {
-        console.error("Error verifying cookie:", error);
       }
     };
     verifyCookie();
