@@ -1,13 +1,14 @@
-import { Link, useNavigate,useDispatch } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Input, Button } from '@material-tailwind/react'
 import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import { useState ,React } from 'react';
 import { login } from '../store/authSlice'
 import 'react-toastify/dist/ReactToastify.css';
+import { UseDispatch } from 'react-redux';
 
 function Signup() {
-  
+
   const dispatch = useDispatch();
   const naviagte = useNavigate();
   const [inputValue, setInputValue] = useState({
