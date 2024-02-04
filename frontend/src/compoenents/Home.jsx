@@ -30,7 +30,6 @@ function Home() {
         : (removeCookie("token"), navigate("/login"));
     };
     verifyCookie();
-    navigate("/");
   }, [cookies, navigate, removeCookie]);
 
   return (
