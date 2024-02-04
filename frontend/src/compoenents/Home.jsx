@@ -24,12 +24,13 @@ function Home() {
       if (user) {
         return
       }
-      return status
-        ?
-        navigate("/")
-        : (removeCookie("token"), navigate("/login"));
+      if(!status){
+        (removeCookie("token"), navigate("/login"));
+      }
+      
     };
     verifyCookie();
+    // navigate();
   }, [cookies, navigate, removeCookie]);
 
   return (
