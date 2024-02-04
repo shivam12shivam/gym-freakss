@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useState ,React } from 'react';
 import { login } from '../store/authSlice'
 import 'react-toastify/dist/ReactToastify.css';
-import { UseDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function Signup() {
 
