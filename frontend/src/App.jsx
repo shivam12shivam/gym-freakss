@@ -9,30 +9,30 @@ import { logout, login } from './store/authSlice'
 import axios from 'axios'
 
 function App() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies([]);
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const [cookies, removeCookie] = useCookies([]);
   
-  useEffect(() => {
-    const verifyCookie = async () => {
-      if (!cookies.token) {
-        navigate("/login");
-      }
-      const { data } = await axios.post(
-        "https://gymfreaksbackend.onrender.com",
-        {},
-        { withCredentials: true }
-      );
-      const { status, user } = data;
-      return status
-        ?
-        dispatch(login({ data }))
-        : (removeCookie("token"), navigate("/login", dispatch(logout()))
-        );
-    };
-    verifyCookie();
-    navigate("/");
-  }, [cookies, navigate, removeCookie]);
+  // useEffect(() => {
+  //   const verifyCookie = async () => {
+  //     if (!cookies.token) {
+  //       navigate("/login");
+  //     }
+  //     const { data } = await axios.post(
+  //       "https://gymfreaksbackend.onrender.com",
+  //       {},
+  //       { withCredentials: true }
+  //     );
+  //     const { status, user } = data;
+  //     return status
+  //       ?
+  //       dispatch(login({ data }))
+  //       : (removeCookie("token"), navigate("/login", dispatch(logout()))
+  //       );
+  //   };
+  //   verifyCookie();
+  //   // navigate("/");
+  // }, [cookies, navigate, removeCookie]);
 
 
   return (

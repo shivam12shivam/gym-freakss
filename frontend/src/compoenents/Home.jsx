@@ -5,21 +5,34 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { motion } from "framer-motion"
+import { useDispatch } from "react-redux";
 
 function Home() {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [cookies, removeCookie] = useCookies([]);
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
         navigate("/login");
       }
-      
-      
+      const { data } = await axios.post(
+        "https://gymfreaksbackend.onrender.com",
+        {},
+        { withCredentials: true }
+      );
+      const { status, user } = data;
+      if (user) {
+        dispatch(login({ data }))
+      }
+      return status
+        ?
+        navigate("/")
+        : (removeCookie("token"), navigate("/login"), dispatch(logout()));
     };
     verifyCookie();
-  }, [cookies, removeCookie]);
+  }, [cookies, navigate, removeCookie]);
 
   return (
     <div className=' bg-gradient-to-r from-blue-900 to-indigo-900'>
