@@ -14,24 +14,31 @@ function Home() {
     const verifyCookie = async () => {
       if (!cookies.token) {
         navigate("/login");
+        return;
       }
-      const { data } = await axios.post(
-        "https://gymfreaksbackend.onrender.com",
-        {},
-        { withCredentials: true }
-      );
-      const { status, user } = data;
-      if (user) {
-        return
+      try {
+        const { data } = await axios.post(
+          "https://gymfreaksbackend.onrender.com",
+          {},
+          { withCredentials: true }
+        );
+        const { status, user } = data;
+        if (user) {
+          return
+        }
+        if (status) {
+          navigate("/");
+        } else {
+          removeCookie("token");
+          navigate("/login");
+        }
+      } catch (error) {
+        console.error("Error verifying cookie:", error);
       }
-      if(!status){
-        (removeCookie("token"), navigate("/login"));
-      }
-      
     };
     verifyCookie();
-    // navigate();
-  }, [cookies, navigate, removeCookie]);
+    // navigate("/");
+  }, [cookies.token, navigate, removeCookie]);
 
   return (
     <div className=' bg-gradient-to-r from-blue-900 to-indigo-900'>
