@@ -31,7 +31,7 @@ function App() {
         );
     };
     verifyCookie();
-    navigate("/");
+    // navigate("/");
   }, [cookies, navigate, removeCookie]);
 
 
