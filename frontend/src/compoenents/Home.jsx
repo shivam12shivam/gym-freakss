@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { motion } from "framer-motion"
-import { UseSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Home() {
   const authStatus = useSelector(state => state.auth.status)
