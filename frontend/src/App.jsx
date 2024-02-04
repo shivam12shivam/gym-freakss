@@ -19,7 +19,7 @@ function App() {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "https://gym-freaks-backend.vercel.app",
+        "https://gymfreaksbackend.onrender.com",
         {},
         { withCredentials: true }
       );

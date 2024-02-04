@@ -43,7 +43,7 @@ function Login() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/login",
+        "https://gymfreaksbackend.onrender.com/login",
         {
           ...inputValue,
         },

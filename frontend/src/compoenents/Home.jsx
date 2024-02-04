@@ -16,7 +16,7 @@ function Home() {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:3000",
+        "https://gymfreaksbackend.onrender.com",
         {},
         { withCredentials: true }
       );
