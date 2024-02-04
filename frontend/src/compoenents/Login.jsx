@@ -6,10 +6,9 @@ import { Button ,Input } from '@material-tailwind/react'
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import logo from'../images/logo.png'
-
+ 
 function Login() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
 
