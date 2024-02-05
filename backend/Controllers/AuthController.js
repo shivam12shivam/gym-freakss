@@ -15,7 +15,7 @@ module.exports.Signup = async (req, res, next) => {
       withCredentials: true,
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      domain: "https://gymfreakss.vercel.app",
+      domain: "gymfreakss.vercel.app",
     });
     res
       .status(201)
@@ -49,7 +49,7 @@ module.exports.Login =async(req,res,next)=>{
       withCredentials:true,
       httpOnly:true,
       secure: process.env.NODE_ENV === "production",
-      domain: "https://gymfreakss.vercel.app",
+      domain: "gymfreakss.vercel.app",
     });
     res.status(201).json({message:"User logged in Successfully",success:true});
     next();
