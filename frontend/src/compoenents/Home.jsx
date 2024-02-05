@@ -3,7 +3,6 @@ import Buttont from '../buttont/Buttont';
 import { useEffect, React } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import axios from "axios";
 import { motion } from "framer-motion"
 import { useSelector } from "react-redux";
 
