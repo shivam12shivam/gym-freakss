@@ -14,8 +14,9 @@ module.exports.Signup = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: true,
-      secure: true,
-      domain: "gymfreakss.vercel.app/signup",
+      SameSite:"None",
+      secure: process.env.NODE_ENV === "production",
+      domain: "gymfreakss.vercel.app",
     });
     res
       .status(201)
@@ -48,7 +49,8 @@ module.exports.Login =async(req,res,next)=>{
     res.cookie("token", token ,{
       withCredentials:true,
       httpOnly:true,
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
+      SameSite:"None",
       domain: "gymfreakss.vercel.app",
     });
     res.status(201).json({message:"User logged in Successfully",success:true});
