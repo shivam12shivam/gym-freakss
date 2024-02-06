@@ -21,7 +21,7 @@ app.listen(aaah, () => {
 
 app.use(
   cors({
-    origin: ["https://gymfreakss.vercel.app"],
+    origin: ["https://gymfreaksss.onrender.com"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
