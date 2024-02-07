@@ -1,4 +1,4 @@
-import { Card, Carousel } from "@material-tailwind/react";
+import { Carousel } from "@material-tailwind/react";
 import Buttont from '../buttont/Buttont';
 import { useEffect, React } from "react";
 import { useNavigate } from "react-router-dom";
