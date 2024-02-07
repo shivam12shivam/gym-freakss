@@ -50,7 +50,7 @@ module.exports.Login =async(req,res,next)=>{
       withCredentials:true,
       httpOnly:true,
       secure: process.env.NODE_ENV === "production",
-      SameSite:"None",
+      SameSite:None,
 
     });
     res.status(201).json({message:"User logged in Successfully",success:true});
