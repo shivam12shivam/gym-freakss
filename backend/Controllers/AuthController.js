@@ -14,8 +14,8 @@ module.exports.Signup = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: true,
-      SameSite:"None",
-      secure: process.env.NODE_ENV === "production",
+      // SameSite:"None",
+      // secure: process.env.NODE_ENV === "production",
 
     });
     res
@@ -49,8 +49,8 @@ module.exports.Login =async(req,res,next)=>{
     res.cookie("token", token ,{
       withCredentials:true,
       httpOnly:true,
-      secure: process.env.NODE_ENV === "production",
-      SameSite:None,
+      // secure: process.env.NODE_ENV === "production",
+      // SameSite:None,
 
     });
     res.status(201).json({message:"User logged in Successfully",success:true});

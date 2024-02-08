@@ -57,8 +57,9 @@ function Login() {
         dispatch(login(data));
         setTimeout(() => {
           navigate("/");
-        }, 2000);
-      } else {
+        }, 1000);
+      }
+      else {
         handleError(message);
       }
     } catch (error) {

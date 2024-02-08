@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 function Signup() {
 
   const dispatch = useDispatch();
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
@@ -51,7 +51,7 @@ function Signup() {
         handleSuccess(message);
         dispatch(login(data));
         setTimeout(() => {
-          naviagte("/");
+          navigate("/");
         }, 1000);
       }
       else {
