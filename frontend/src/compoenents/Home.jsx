@@ -94,7 +94,7 @@ function Home() {
         <div className="bg-[url('https://www.diabetes.co.uk/wp-content/uploads/2019/01/iStock-528072248-scaled.jpg')] w-full h-[250px] sm:bg-right bg-center-bottom md:h-[250px] bg-cover bg-no-repeat flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"BMI"} address={"/bmi"} />
         </div>
-        <div className="bg-[url('https://www.gannett-cdn.com/presto/2019/03/18/PBUR/6a666f26-46e1-4e3a-86cd-2487847e50ee-GettyImages-951377636.jpg?crop=723,404,x0,y0&width=3200&height=1680&fit=bounds')] w-full h-[250px] bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
+        <div className="bg-[url('https://th.bing.com/th/id/OIP.ajq1lr8ghPy0rY4y5cyZEgHaE8?rs=1&pid=ImgDetMain')] w-full h-[250px] bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"DIET"} address={"/diet"} />
         </div>
       </div>
