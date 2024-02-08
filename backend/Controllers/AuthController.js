@@ -13,7 +13,7 @@ module.exports.Signup = async (req, res, next) => {
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
       withCredentials: true,
-      httpOnly: true,
+      httpOnly: false,
       // SameSite:"None",
       // secure: process.env.NODE_ENV === "production",
 
@@ -48,7 +48,7 @@ module.exports.Login =async(req,res,next)=>{
     const token=createSecretToken(user._id);
     res.cookie("token", token ,{
       withCredentials:true,
-      httpOnly:true,
+      httpOnly:false,
       // secure: process.env.NODE_ENV === "production",
       // SameSite:None,
 
