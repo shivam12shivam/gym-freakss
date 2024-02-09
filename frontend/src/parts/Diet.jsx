@@ -1,17 +1,20 @@
 import React from 'react'
 import { DietCard } from '../cards/DietCard'
 import { useNavigate } from 'react-router-dom'
+import { Fade } from 'react-swift-reveal';
 
 function Diet() {
   let navigate=useNavigate();
 
   return (
+    <Fade duration={2000}>
     <div className="bg-gradient-to-r from-indigo-200 to-indigo-700">
       <div className='p-4 my-4 grid grid-cols-1 md:grid-cols-2 justify-items-center gap-12'>
         <DietCard info={"CUTTING"} path={"/diet/cutting"} />
         <DietCard info={"BULKING"} path={"/diet/bulking"} />
       </div>
     </div>
+    </Fade>
   )
 }
 

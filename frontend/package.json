@@ -14,7 +14,6 @@
     "@reduxjs/toolkit": "^2.0.1",
     "@tinymce/tinymce-react": "^4.3.2",
     "axios": "^1.6.5",
-    "framer-motion": "^11.0.3",
     "html-react-parser": "^5.0.11",
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",
@@ -23,6 +22,7 @@
     "react-hook-form": "^7.49.2",
     "react-redux": "^9.0.4",
     "react-router-dom": "^6.21.1",
+    "react-swift-reveal": "^1.0.4",
     "react-toastify": "^10.0.4"
   },
   "devDependencies": {

@@ -3,8 +3,8 @@ import Buttont from '../buttont/Buttont';
 import { useEffect, React } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import { motion } from "framer-motion"
 import { useSelector } from "react-redux";
+import { Fade } from 'react-swift-reveal';
 
 function Home() {
   const authStatus = useSelector(state => state.auth.status)
@@ -12,7 +12,7 @@ function Home() {
   const [cookies, removeCookie] = useCookies([]);
   useEffect(() => {
     const verifyCookie = async () => {
-      if(authStatus===false){
+      if (authStatus === false) {
         navigate("/login");
       }
     };
@@ -21,46 +21,51 @@ function Home() {
   }, [cookies.token, navigate, removeCookie]);
 
   return (
+
     <div className=' bg-gradient-to-r from-blue-900 to-indigo-900'>
+      <Fade duration={2000}>
+        <div>
+          <Carousel transition={{ duration: 1 }} autoplay={true} loop={true}
+            className="rounded-xl overflow-hidden h-96"
+            navigation={({ setActiveIndex, activeIndex, length }) => (
+              <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                {new Array(length).fill("").map((_, i) => (
+                  <span
+                    key={i}
+                    className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                      }`}
+                    onClick={() => setActiveIndex(i)}
+                  />
+                ))}
+              </div>
+            )}
+          >
+            <img
+              src="https://www.wewishes.com/wp-content/uploads/2020/07/Gym-Quotes-1.jpg"
+              alt="image 1"
+              className="object-fill h-full w-full rounded-md"
+            />
+            <img
+              src="https://staticg.sportskeeda.com/editor/2022/10/31dcd-16652377189175-1920.jpg"
+              alt="image 2"
+              className="object-fill h-full w-full rounded-md"
+            />
+            <img
+              src="https://www.wewishes.com/wp-content/uploads/2020/07/Gym-Quotes-9.jpg"
+              alt="image 3"
+              className="object-fill h-full w-full rounded-md"
+            />
+          </Carousel>
+        </div>
+      </Fade>
 
-      <div>
-        <Carousel transition={{ duration: 1 }} autoplay={true} loop={true}
-          className="rounded-xl overflow-hidden h-96"
-          navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-              {new Array(length).fill("").map((_, i) => (
-                <span
-                  key={i}
-                  className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-                    }`}
-                  onClick={() => setActiveIndex(i)}
-                />
-              ))}
-            </div>
-          )}
-        >
-          <img
-            src="https://www.wewishes.com/wp-content/uploads/2020/07/Gym-Quotes-1.jpg"
-            alt="image 1"
-            className="object-fill h-full w-full rounded-md"
-          />
-          <img
-            src="https://staticg.sportskeeda.com/editor/2022/10/31dcd-16652377189175-1920.jpg"
-            alt="image 2"
-            className="object-fill h-full w-full rounded-md"
-          />
-          <img
-            src="https://www.wewishes.com/wp-content/uploads/2020/07/Gym-Quotes-9.jpg"
-            alt="image 3"
-            className="object-fill h-full w-full rounded-md"
-          />
-        </Carousel>
-      </div>
+      <Fade duration={2000}>
+        <div className='text-5xl w-auto m-20 my-24 m p-5 text-white shadow-black shadow-lg bg-indigo-800' style={{ fontFamily: "fantasy" }}>
+          <h1>Ready to conquer? Pick a part. Let's crush those fitness goals!</h1>
+        </div>
+      </Fade>
 
-      <div className='text-5xl w-auto m-20 my-24 m p-5 text-white shadow-black shadow-lg bg-indigo-800' style={{ fontFamily: "fantasy" }}>
-        <h1>Ready to conquer? Pick a part. Let's crush those fitness goals!</h1>
-      </div>
-
+      <Fade duration={2000}>
       <div className='grid grid-cols-3 gap-4 gap-y-20 overflow-hidden m-4'>
 
         <div className="bg-[url('https://cdn.shopify.com/s/files/1/1633/7705/files/chest_workout_routines_480x480.jpg?v=1682419018')] w-full h-[250px] bg-center bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
@@ -98,9 +103,12 @@ function Home() {
           <Buttont name={"DIET"} address={"/diet"} />
         </div>
       </div>
+      </Fade>
+
 
 
     </div>
+
   )
 }
 
