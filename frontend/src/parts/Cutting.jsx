@@ -21,7 +21,7 @@ function Cutting() {
   return (
     <div>
       <div className=" bg-[url('https://gfitnessonline.com/wp-content/uploads/2020/07/cutting-diet-cover-1024x536.png')] bg-opacity-40 bg-no-repeat bg-cover ">
-      <ul className='grid grid-cols-2 gap-11 p-6 '>
+      <ul className='grid grid-cols-1 md:grid-cols-2 gap-11 p-6 '>
         {data.map(item => (
           <li>
           <div key={item._id} className=' w-full align-middle  text-3xl p-4 bg-black rounded-xl bg-opacity-70 hover:bg-opacity-90  shadow-md  shadow-blue-gray-200 font-semibold '>
