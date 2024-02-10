@@ -60,36 +60,36 @@ function Home() {
       </Fade>
 
       <Fade duration={2000}>
-        <div className='text-5xl w-auto m-20 my-24 m p-5 text-white shadow-black shadow-lg bg-indigo-800' style={{ fontFamily: "fantasy" }}>
+        <div className='text-2xl md:text-5xl w-auto m-20 my-24 m p-5 text-white shadow-black shadow-lg bg-indigo-800' style={{ fontFamily: "fantasy" }}>
           <h1>Ready to conquer? Pick a part. Let's crush those fitness goals!</h1>
         </div>
       </Fade>
 
       <Fade duration={2000}>
-      <div className='grid grid-cols-3 gap-4 gap-y-20 overflow-hidden m-4'>
+      <div className='grid grid-cols-2  md:grid-cols-3 gap-4 gap-y-20 overflow-hidden m-4'>
 
         <div className="bg-[url('https://cdn.shopify.com/s/files/1/1633/7705/files/chest_workout_routines_480x480.jpg?v=1682419018')] w-full h-[250px] bg-center bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"CHEST"} address={"/chest"} />
         </div>
 
 
-        <div className="bg-[url('https://th.bing.com/th/id/R.7b250cc51effcb6b59884a180e2df1aa?rik=zGWwZmqpF3xwhg&riu=http%3a%2f%2fwww.bodybuilding.com%2fimages%2f2016%2faugust%2f5-best-shoulder-workouts-for-mass-an-intermediate-guide-2.jpg&ehk=Z5jrf3xXB65B9e%2fClbEFvHGlVocZhJ3dbKY14j%2fft%2fk%3d&risl=&pid=ImgRaw&r=0')] w-full h-[250px] sm:bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
+        <div className="bg-[url('https://th.bing.com/th/id/R.7b250cc51effcb6b59884a180e2df1aa?rik=zGWwZmqpF3xwhg&riu=http%3a%2f%2fwww.bodybuilding.com%2fimages%2f2016%2faugust%2f5-best-shoulder-workouts-for-mass-an-intermediate-guide-2.jpg&ehk=Z5jrf3xXB65B9e%2fClbEFvHGlVocZhJ3dbKY14j%2fft%2fk%3d&risl=&pid=ImgRaw&r=0')] w-full h-[250px] bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"SHOULDERS"} address={"/shoulders"} />
         </div>
 
-        <div className="bg-[url('https://th.bing.com/th/id/R.f753b98b39813c68acf563c4c8cbeb21?rik=IfXs%2bjF6asVHwg&riu=http%3a%2f%2fwww.blogmedicine.org%2fwp-content%2fuploads%2f2017%2f12%2fUntitled-2.jpg&ehk=Nqjvlf6SQk1LXIVYbTubla2exKmqc92WoWm59H1ZDd8%3d&risl=&pid=ImgRaw&r=0')] object-fill sm:bg-center bg-left-bottom bg-no-repeat bg-cover w-full h-[250px]  mb-8 md:bg-cover  md:h-[250px]  flex items-center  justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
+        <div className="bg-[url('https://th.bing.com/th/id/R.f753b98b39813c68acf563c4c8cbeb21?rik=IfXs%2bjF6asVHwg&riu=http%3a%2f%2fwww.blogmedicine.org%2fwp-content%2fuploads%2f2017%2f12%2fUntitled-2.jpg&ehk=Nqjvlf6SQk1LXIVYbTubla2exKmqc92WoWm59H1ZDd8%3d&risl=&pid=ImgRaw&r=0')] bg-center object-fill bg-no-repeat bg-cover w-full h-[250px]  mb-8 md:bg-cover  md:h-[250px]  flex items-center  justify-center rounded-3xl  opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"BACK"} address={"/back"} />
         </div>
 
-        <div className="bg-[url('https://i.ytimg.com/vi/Vr49IR4EOkY/maxresdefault.jpg')] w-auto h-[250px] sm:bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
+        <div className="bg-[url('https://i.ytimg.com/vi/Vr49IR4EOkY/maxresdefault.jpg')] w-auto h-[250px] bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"BICEPS"} address={"/biceps"} />
         </div>
 
-        <div className="bg-[url('https://shreddedbrothers.com/uploads/blogs/ckeditor/files/triceps_2.jpg')] w-full h-[250px] sm:bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] lg:bg-cover flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
+        <div className="bg-[url('https://shreddedbrothers.com/uploads/blogs/ckeditor/files/triceps_2.jpg')] w-full h-[250px] bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] lg:bg-cover flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"TRICEPS"} address={"/triceps"} />
         </div>
 
-        <div className="bg-[url('https://i.pinimg.com/736x/1e/a4/6c/1ea46c4334a78cf06f82944930405bc2.jpg')] w-full h-[250px] sm:bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
+        <div className="bg-[url('https://i.pinimg.com/736x/1e/a4/6c/1ea46c4334a78cf06f82944930405bc2.jpg')] w-full h-[250px] bg-center bg-center-bottom bg-no-repeat bg-cover mb-8 md:bg-cover md:h-[250px] flex items-center justify-center rounded-3xl opacity-80 hover:opacity-100 hover:shadow-white hover:shadow-md">
           <Buttont name={"LEGS"} address={"/legs"} />
         </div>
 
